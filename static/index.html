@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World of Languages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .app-title {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .app-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+            line-height: 1.4;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #6c757d;
+            text-transform: uppercase;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+        
+        .challenge-card {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .challenge-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .challenge-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .challenge-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        
+        .progress-section {
+            margin-top: 25px;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 10px;
+            width: 68%;
+        }
+        
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #6c757d;
+        }
+        
+        .start-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transition: transform 0.2s;
+        }
+        
+        .start-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .navigation {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .nav-item {
+            text-align: center;
+            padding: 15px 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            color: white;
+            font-size: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-item.active {
+            background: rgba(255,255,255,0.2);
+            font-weight: 600;
+        }
+        
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .achievement-icon {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Навигация -->
+        <div class="navigation">
+            <div class="nav-item active">Learn</div>
+            <div class="nav-item">Translate</div>
+            <div class="nav-item">Word list</div>
+            <div class="nav-item">W</div>
+        </div>
+        
+        <!-- Заголовок -->
+        <div class="header">
+            <div class="app-title">World of Languages</div>
+            <div class="app-subtitle">
+                Мы поможем вам получить знания, которые изменят вашу жизнь. 
+                Участвуйте в испытаниях и получайте скидки на обучение
+            </div>
+        </div>
+        
+        <!-- Статистика -->
+        <div class="card">
+            <div class="section-title">Your Learning's</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">120</div>
+                    <div class="stat-label">Words</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">20</div>
+                    <div class="stat-label">Courses</div>
+                </div>
+            </div>
+            
+            <!-- Челлендж -->
+            <div class="challenge-card">
+                <div class="challenge-header">
+                    <div class="challenge-title">November Month</div>
+                    <div class="challenge-badge">+5</div>
+                </div>
+                <div>Challenge</div>
+            </div>
+            
+            <!-- Достижения -->
+            <div class="achievement-item">
+                <div class="achievement-icon">20</div>
+                <div>
+                    <div style="font-weight: 600; margin-bottom: 5px;">Daily English</div>
+                    <div style="font-size: 12px; color: #6c757d;">Courses</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Прогресс -->
+        <div class="card">
+            <div class="section-title">Your Progress</div>
+            <div class="progress-section">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-info">
+                    <span>March 2022</span>
+                    <span>68%</span>
+                </div>
+                <div style="font-size: 12px; color: #6c757d; margin-top: 5px;">
+                    -15% Comparingly
+                </div>
+            </div>
+        </div>
+        
+        <!-- Кнопка старта -->
+        <button class="start-button">Start Learning</button>
+    </div>
+
+    <script>
+        // Простая анимация для кнопки
+        document.querySelector('.start-button').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+                alert('Обучение начинается! 🚀');
+            }, 150);
+        });
+        
+        // Анимация появления элементов
+        const elements = document.querySelectorAll('.card, .header, .navigation');
+        elements.forEach((element, index) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                element.style.transition = 'all 0.5s ease';
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
+    </script>
+</body>
+</html>
